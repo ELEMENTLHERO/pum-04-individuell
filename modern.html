@@ -9,11 +9,22 @@
 <body>
     <header class="main-header">
         <h1 class="main-title">Modern UI</h1>
+        <div class="icon-wrapper">
+            <img src="icon.png" alt="Example Icon" class="icon">
+        </div>
         <nav class="main-menu">
             <button class="menu-toggle">☰</button>
             <ul class="menu-list">
-                <li><a href="#">File</a></li>
-                <li><a href="#">Edit</a></li>
+                <li><a href="#">File</a>
+                    <ul>
+                        <li><a href="#" onclick="insertLoremIpsum()">Lorem Ipsum</a></li>
+                    </ul>
+                    </li>
+                <li><a href="#">Edit</a>
+                    <ul>
+                        <li><a href="#" onclick="openFindDialog()">Find</a></li>
+                    </ul>                    
+                </li>
                 <li><a href="#">View</a></li>
                 <li><a href="#">Help</a></li>
                 <li><a href="#" id="settings">Settings</a></li>
@@ -21,10 +32,16 @@
         </nav>
     </header>
     <main class="main-content">
-        <div class="icon-wrapper">
-            <img src="icon.png" alt="Example Icon" class="icon">
-            <span>Example Icon</span>
+        <div class="editor-container">
+            <div class="toolbar">
+                <button class="tool" onclick="format('bold')">B</button>
+                <button class="tool" onclick="format('italic')">I</button>
+                <button class="tool" onclick="format('underline')">U</button>
+            </div>
+            <div class="text-editor" contenteditable="true"></div>
         </div>
+        
+        
     </main>
     <div class="modal" id="settings-modal">
         <div class="modal-content">
@@ -33,6 +50,7 @@
             <p>Settings go here</p>
         </div>
     </div>
+    <script src="editor-scripts.js"></script>
     <script src="modern-scripts.js"></script>
 </body>
 </html>

@@ -10,6 +10,7 @@
     <div class="window">
         <div class="titlebar">
             <span class="title">Old School Window</span>
+            <img src="icon.png" alt="Example Icon" class="icon">
         </div>
         <div class="content">
             <ul class="menu">
@@ -18,6 +19,7 @@
                     <ul class="submenu">
                         <li>New</li>
                         <li>Open</li>
+                        <li><a href="#" onclick="insertLoremIpsum()">Lorem Ipsum</a></li>
                         <li>Save</li>
                         <li>Exit</li>
                     </ul>
@@ -30,6 +32,7 @@
                         <li>Cut</li>
                         <li>Copy</li>
                         <li>Paste</li>
+                        <li><a href="#" onclick="openFindModal()">Find</a></li>
                     </ul>
                 </li>
                 <li>
@@ -56,12 +59,26 @@
                     </div>
                 </li>
             </ul>
-            <div class="icon-container">
-                <img src="icon.png" alt="Example Icon" class="icon">
-                <span>Example Icon</span>
+            <div id="find-modal" class="modal">
+                <div class="modal-content">
+                    <span class="close-button" onclick="closeFindModal()">&times;</span>
+                    <label for="find-text">Enter the text to find:</label>
+                    <input type="text" id="find-text">
+                    <button onclick="performFind()">Find</button>
+                </div>
+            </div>
+            
+            <div class="editor-container">
+                <div class="toolbar">
+                    <button class="tool" onclick="format('bold')"><b>B</b></button>
+                    <button class="tool" onclick="format('italic')"><i>I</i></button>
+                    <button class="tool" onclick="format('underline')"><u>U</u></button>
+                </div>
+                <div class="text-editor" contenteditable="true"></div>
             </div>
         </div>
     </div>
+    <script src="editor-scripts.js"></script>
     <script src="scripts.js"></script>
 </body>
 </html>
