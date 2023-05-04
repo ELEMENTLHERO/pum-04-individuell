@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flat Design UI</title>
+    <link rel="stylesheet" href="flatdesign.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+<body>
+    <header>
+        <nav>
+            <ul class="menu">
+                <li>
+                    <span class="material-symbols-outlined">draft</span>
+                    <ul class="submenu">
+                        <li>New</li>
+                        <li>Open</li>
+                        <li><a href="#" onclick="insertLoremIpsum()">Lorem Ipsum</a></li>
+                        <li>Save</li>
+                        <li>Exit</li>
+                    </ul>
+                </li>
+                <li>
+                    <span class="material-symbols-outlined">edit</span>
+                    <ul class="submenu">
+                        <li>Undo</li>
+                        <li>Redo</li>
+                        <li>Cut</li>
+                        <li>Copy</li>
+                        <li>Paste</li>
+                        <li><a href="#" onclick="openFindModal()">Find</a></li>
+                        <li>
+                            Formating
+                            <ul class="sub-submenu">
+                                <li>Bold</li>
+                                <li>Italic</li>
+                                <li>Underline</li>
+                                <li>Strikethrough</li>
+                            </ul>
+                        </li>  
+                    </ul>
+                </li>
+                <li>
+                    <span class="material-symbols-outlined">zoom_in</span>
+                    <ul class="submenu">
+                        <li>Zoom In</li>
+                        <li>Zoom Out</li>
+                        <li>Reset Zoom</li>
+                    </ul>
+                </li>
+                <li>
+                    <span class="material-symbols-outlined">help</span>
+                    <ul class="submenu">
+                        <li>
+                            Zoom
+                            <ul class="sub-submenu">
+                                <li>How to zoom</li>
+                                <li>How to reset zoom</li>
+                            </ul>
+                        </li>                        
+                        <li>About Us</li>
+                        <li>Find Function</li>
+                    </ul>
+                </li>
+                <li id="settings">
+                    <span class="material-symbols-outlined">settings</span>
+                    <div class="settings-window" id="settings-window">
+                        <div class="settings-content">
+                            <h2>Settings</h2>
+                            <button class="dummy-button">Dummy button</button>
+                            <p>Settings go here</p>
+                        </div>
+                    </div>
+                </li>
+            </ul>               
+        </nav>
+    </header>
+    <main>
+        <div id="find-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-button" onclick="closeFindModal()">&times;</span>
+                <label for="find-text">Enter the text to find:</label>
+                <input type="text" id="find-text">
+                <button onclick="performFind()">Find</button>
+            </div>
+        </div>
+
+        <section class="editor-container">
+            <div class="toolbar">
+                <button class="tool" onclick="format('bold')">B</button>
+                <button class="tool" onclick="format('italic')">I</button>
+                <button class="tool" onclick="format('underline')">U</button>
+            </div>
+            <div class="text-editor" contenteditable="true"></div>
+        </section>
+    </main>
+    <script src="editor-scripts.js"></script>
+    <script src="scripts.js"></script>
+</body>
+</html>
+
